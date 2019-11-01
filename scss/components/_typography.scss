@@ -2,6 +2,14 @@
 // Typographical Styles
 // ==========================================================================
 
-.test-span {
-  color: $pink;
+.employee {
+  @include m(name) {
+    @extend %employee;
+  }
+  @include m(email) {
+    @extend %employee;
+  }
+  @include m(location) {
+    @extend %employee;
+  }
 }
