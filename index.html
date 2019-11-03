@@ -6,8 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/application.css">
 </head>
-
 <body>
+  <div id="modal">
+    <i id="closeIcon" class="fas fa-times">X</i>
+    <picture>
+      <img class="profilePic" src="images/member-1.jpg" alt="profile picture of human">
+    </picture>
+    <h3 class="employee--name">Charlie Prator</h3>
+    <p class="employee--email">charlie@hotmail.com</p>
+    <p class="employee--location">Houston, TX</p>
+    <span class="hruler"></span>
+    <p class="employee--phone">123-456-7890</p>
+    <p class="employee--address">123 Main St. Houston, TX 12345</p>
+    <p class="employee--birthday">09/18/1987</p>
+  </div>
+  <div id="overlay"></div><!--/.overlay-->
   <div class="container">
     <h1>Awesome Startup Employee Directory</h1>
     <div class="grid__row">
@@ -164,5 +177,5 @@
     </div><!--/.grid__row-->
   </div><!-- /container -->
 </body>
-
+<script src="js/app.js"></script>
 </html>

@@ -7,7 +7,7 @@
   flex-grow: inherit;
 }
 
-.employee--location, .employee--email, .employee--name {
+.employee--birthday, .employee--address, .employee--phone, .employee--location, .employee--email, .employee--name {
   margin: 0;
 }
 
@@ -488,6 +488,7 @@ p {
   max-width: 1024px;
   margin: 0 auto;
   padding: 1.5em;
+  z-index: 0;
 }
 
 .grid__row {
@@ -604,7 +605,44 @@ p {
     width: calc(1024px*calc(12/12));
   }
 }
+#overlay {
+  background-color: rgba(4, 4, 4, 0.75);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  visibility: hidden;
+  z-index: 1;
+}
+
+#modal {
+  background-color: #fff;
+  border: 1px solid darkgray;
+  box-shadow: 0 0 0.5em 0.5em rgba(4, 4, 4, 0.25);
+  border-radius: 0.75em;
+  padding: 3em;
+  margin: 0.5em 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 40%;
+  margin: 0 auto;
+  z-index: 2;
+  position: absolute;
+  top: 10%;
+  left: 15vw;
+  visibility: hidden;
+}
+#modal > * {
+  text-align: center;
+}
+
+.hruler {
+  width: 100%;
+  border: 1px solid #c3c3c3;
+  margin: 1em 0;
+}
+
 .card {
+  background-color: #fff;
   border: 1px solid darkgray;
   border-radius: 0.75em;
   padding: 1.5em;
@@ -629,6 +667,14 @@ p {
   display: flex;
   flex-direction: column;
   align-self: center;
+}
+
+.employee--birthday::before {
+  content: "Birthday: ";
+}
+
+#closeIcon {
+  text-align: right;
 }
 
 .profilePic {

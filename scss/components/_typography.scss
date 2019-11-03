@@ -12,4 +12,16 @@
   @include m(location) {
     @extend %employee;
   }
+  @include m(phone) {
+    @extend %employee;
+  }
+  @include m(address) {
+    @extend %employee;
+  }
+  @include m(birthday) {
+    @extend %employee;
+    &::before {
+      content: "Birthday: ";
+    }
+  }
 }
