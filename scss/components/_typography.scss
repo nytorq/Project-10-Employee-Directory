@@ -2,6 +2,10 @@
 // Typographical Styles
 // ==========================================================================
 
+h1 {
+  line-height: 1.25em;
+}
+
 .employee {
   @include m(name) {
     @extend %employee;

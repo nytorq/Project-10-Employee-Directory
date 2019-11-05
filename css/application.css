@@ -491,9 +491,6 @@ p {
   z-index: 0;
 }
 
-.grid__row {
-  margin: 2em 0;
-}
 @media (min-width: 768px) {
   .grid__row {
     display: -webkit-box;
@@ -669,6 +666,10 @@ p {
   align-self: center;
 }
 
+h1 {
+  line-height: 1.25em;
+}
+
 .employee--birthday::before {
   content: "Birthday: ";
 }
@@ -677,7 +678,7 @@ p {
   text-align: right;
 }
 
-.profilePic {
+.employee--pic {
   border-radius: 100%;
   width: 75px;
 }

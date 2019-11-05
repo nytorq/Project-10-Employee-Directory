@@ -3,7 +3,6 @@
 // ==========================================================================
 
 .grid__row {
-  margin: 2em 0;
   @include mq($break-t) {
     @include flexbox {
       margin-top: 1em;
