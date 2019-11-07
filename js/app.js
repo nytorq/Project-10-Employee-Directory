@@ -15,6 +15,16 @@ request.onreadystatechange = function () {
   if (request.readyState === 4) {
     response = JSON.parse(request.responseText);
     console.log(response);
+    function cardRewriter(card) {
+      let picture = card.getElementsByClassName('employee--pic');
+      let name = card.getElementsByClassName('employee--name');
+      let email = card.getElementsByClassName('employee--email');
+      let loc = card.getElementsByClassName('employee--location');
+      let apiName = response.results[0].name.first;
+      name[0].innerText = apiName;
+    }
+
+    cardRewriter(cards[0]);
   }
 };
 
@@ -52,18 +62,3 @@ closeIcon.addEventListener('click', ()=> {
 //
 
 //  Card rewriting FUNCTIONS
-
-function cardRewriter(card) {
-  let picture = card.getElementsByClassName('employee--pic');
-  let name = card.getElementsByClassName('employee--name');
-  let email = card.getElementsByClassName('employee--email');
-  let loc = card.getElementsByClassName('employee--location');
-
-  // let apiName = response.results[0].name.first;
-
-  console.log(response.results)
-
-  // name = apiName;
-}
-
-cardRewriter(cards[0]);
