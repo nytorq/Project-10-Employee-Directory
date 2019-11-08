@@ -1,6 +1,7 @@
 //
 //  VARIABLES
 //
+
 const users = [
   {
     firstName: '',
@@ -88,7 +89,9 @@ for (i=0 ; i < cards.length ; i++) {
   card.addEventListener('click', ()=> {
     overlay.style.visibility = 'visible';
     modal.style.visibility = 'visible';
-    cardRewriter(modal);
+    let target = event.target;
+    console.log(cards.indexOf(target));
+    // cardRewriter(modal);
   });
 }
 
