@@ -17,3 +17,13 @@
 %employee {
   margin: 0;
 }
+
+%inputs {
+  box-sizing: border-box;
+  border: 1px solid lighten($gray, 25%);
+  padding: 1em;
+  border-radius: 4px;
+  width: 100%;
+  transition: border 0.15s ease-in-out;
+  background-color: lighten($gray, 50%);
+}

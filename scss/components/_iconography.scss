@@ -5,3 +5,10 @@
 #closeIcon {
   text-align: right;
 }
+
+.input-icon {
+  position: absolute;
+  right: 1em;
+  top: 1.25em;
+  color: lighten($color-primary,15%);
+}
