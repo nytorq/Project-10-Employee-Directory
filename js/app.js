@@ -9,6 +9,8 @@ const closeIcon = document.getElementById('closeIcon');
 const typeAhead = document.getElementById('typeAhead');
 let request = new XMLHttpRequest();
 let response;
+let testUser;
+
 
 function cardWriter(object, i = 0) {
   let picture;
@@ -30,8 +32,17 @@ function cardWriter(object, i = 0) {
     phone[0].innerText = apiPhone;
     let birthday = object.getElementsByClassName('employee--birthday');
     let apiDOB = response.results[i].dob.date;
-    apiDOB = new Date(apiDOB);
+    apiDOB = new Date(apiDOB).toLocaleDateString();
     birthday[0].innerText = apiDOB;
+    let address = object.getElementsByClassName('employee--address');
+    let streetNumber = response.results[i].location.street.number;
+    streetNumber = streetNumber.toString();
+    let streetName = response.results[i].location.street.name;
+    let city = response.results[i].location.city;
+    let country = response.results[i].location.country;
+    let postCode = response.results[i].location.postcode;
+    postCode = postCode.toString();
+    address[0].innerText = streetNumber.concat(' ', streetName,' ', city, ' ', country, ' ', postCode);
   }
   let apiPicture = response.results[i].picture.medium;
   let apiFirstName = response.results[i].name.first;
@@ -69,12 +80,12 @@ request.onreadystatechange = function () {
     for (i=0 ; i<cards.length ; i++) {
       cardWriter(cards, i);
     }
+    testUser = response.results[0];
   }
 };
 
 request.open('GET', 'https://randomuser.me/api/?results=12');
 request.send();
-
 
 //
 //  Event Handlers
