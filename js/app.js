@@ -121,8 +121,24 @@ closeIcon.addEventListener('click', ()=> {
 // let searchString;
 typeAhead.addEventListener('input', () =>{
   let searchString;
-  searchString = typeAhead.value;
-  // console.log(searchString);
+  searchString = typeAhead.value.toLowerCase();
+  for (i=0 ; i < response.results.length ; i++) {
+    let currentUser = response.results[i];
+    let firstName = currentUser.name.first.toLowerCase();
+    let lastName = currentUser.name.last.toLowerCase();
+    let fullName = firstName.concat(lastName);
+    let userName = currentUser.login.username.toLowerCase();
+    if (fullName.search(searchString) < 0 &&  userName.search(searchString) < 0) {
+      cards[i].style.display = 'none';
+    } else if (fullName.search(searchString) > 0 ||  userName.search(searchString) > 0) {
+      cards[i].style.display = 'flex';
+    }
+    if (searchString === '') {
+      for (i=0 ; i < cards.length ; i++) {
+        cards[i].style.display = 'flex';
+      }
+    }
+  }
 })
 
 
