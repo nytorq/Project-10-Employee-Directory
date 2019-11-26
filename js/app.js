@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 //
 //  VARIABLES
 //
@@ -47,7 +48,7 @@ function cardWriter(object, i = 0) {
   let apiPicture = response.results[i].picture.medium;
   let apiFirstName = response.results[i].name.first;
   let apiLastName = response.results[i].name.last;
-  let apiEmail = response.results[i].email
+  let apiEmail = response.results[i].email;
   let apiCity = response.results[i].location.city;
   picture[0].src = apiPicture;
   name[0].innerText = apiFirstName.concat(" ", apiLastName);
@@ -139,10 +140,40 @@ typeAhead.addEventListener('input', () =>{
       }
     }
   }
-})
+});
 
+document.addEventListener('keydown', (event) => {
+  let modalState = modal.style.visibility;
+  if (modalState === 'visible') {
+    let email = modal.getElementsByClassName('employee--email');
+    email = email[0].innerText;
+    let apiIndex;
+    for (i=0 ; i < response.results.length ; i++) {
+      let apiEmail = response.results[i].email;
+      let result = apiEmail.search(email);
+      if (result > 0) {
+        apiIndex = i;
+        return apiIndex;
+      }
+    }
+    if (event.key === "ArrowLeft" && apiIndex === 0) {
+      apiIndex = 12;
+    } else if (event.key === "ArrowRight" && apiIndex === 12) {
+      apiIndex = 0;
+    } else if (event.key === "ArrowRight") {
+      apiIndex = apiIndex + 1;
+    } else if (event.key === "ArrowLeft") {
+      apiIndex = apiIndex - 1;
+    }
+    cardWrtier(modal, apiIndex);
+    // console.log(email);
 
+  }
+});
 
+// document.addEventListener('click', () => {
+//   console.log(event.target);
+// });
 
 
 // 1. Extract the search input's value and store it in a variable, searchString.

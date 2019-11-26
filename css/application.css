@@ -685,7 +685,7 @@ h1 {
 }
 
 #closeIcon {
-  text-align: right;
+  align-self: flex-end;
 }
 
 .input-icon {
