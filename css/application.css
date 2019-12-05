@@ -9,6 +9,9 @@
 
 .employee--birthday, .employee--address, .employee--phone, .employee--location, .employee--email, .employee--name {
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 input[type=search] {
@@ -652,7 +655,7 @@ p {
   background-color: #fff;
   border: 1px solid darkgray;
   border-radius: 0.75em;
-  padding: 1.5em;
+  padding: 1em;
   margin: 0.5em 0;
   display: flex;
 }
@@ -710,7 +713,7 @@ input[type=search]:hover {
 
 .employee--pic {
   border-radius: 100%;
-  width: 75px;
+  width: 4em;
 }
 
 /*# sourceMappingURL=application.css.map */

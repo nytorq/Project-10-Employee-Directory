@@ -151,21 +151,21 @@ document.addEventListener('keydown', (event) => {
     for (i=0 ; i < response.results.length ; i++) {
       let apiEmail = response.results[i].email;
       let result = apiEmail.search(email);
-      if (result > 0) {
+      if (result >= 0) {
         apiIndex = i;
-        return apiIndex;
+        // return apiIndex;
       }
     }
     if (event.key === "ArrowLeft" && apiIndex === 0) {
-      apiIndex = 12;
-    } else if (event.key === "ArrowRight" && apiIndex === 12) {
+      apiIndex = 11;
+    } else if (event.key === "ArrowRight" && apiIndex === 11) {
       apiIndex = 0;
     } else if (event.key === "ArrowRight") {
       apiIndex = apiIndex + 1;
     } else if (event.key === "ArrowLeft") {
       apiIndex = apiIndex - 1;
     }
-    cardWrtier(modal, apiIndex);
+    cardWriter(modal, apiIndex);
     // console.log(email);
 
   }
