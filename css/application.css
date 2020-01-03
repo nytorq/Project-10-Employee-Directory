@@ -617,9 +617,9 @@ p {
 }
 #overlay {
   background-color: rgba(4, 4, 4, 0.75);
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
+  height: 100%;
+  width: 100%;
+  position: fixed;
   visibility: hidden;
   z-index: 1;
 }
@@ -636,10 +636,11 @@ p {
   max-width: 40%;
   margin: 0 auto;
   z-index: 2;
-  position: absolute;
-  top: 10%;
-  left: 15vw;
   visibility: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 #modal > * {
   text-align: center;
@@ -658,10 +659,12 @@ p {
   padding: 1em;
   margin: 0.5em 0;
   display: flex;
+  min-width: 0;
 }
 @media (min-width: 768px) {
   .card {
     margin: 0 0.5em;
+    width: 100%;
   }
 }
 
@@ -677,6 +680,8 @@ p {
   display: flex;
   flex-direction: column;
   align-self: center;
+  min-width: 0;
+  width: 100%;
 }
 
 h1 {
